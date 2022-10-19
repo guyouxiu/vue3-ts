@@ -20,7 +20,8 @@
         "src/*"
       ]
     },
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true, //解决用字符串做下标报错
   },
   "include": [
     "src/**/*.ts",

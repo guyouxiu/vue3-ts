@@ -1,24 +1,24 @@
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
 
-
 export interface State {
-    count: number
+    menuStatus: boolean,
+
 }
 export const key: InjectionKey<Store<State>> = Symbol()
 export const store = createStore<State>({
     state: {
-        count: 0
+        menuStatus:false
     },
     mutations: {
-        setCount(state: State, count: number) {
-            state.count = count
-        }
+       setMenuStatus(state,status){
+            state.menuStatus=status
+       }
     },
     getters: {
-        getCount(state: State) {
-            return state.count
-        }
+       getMenuStatus(state){
+            return state.menuStatus
+       }
     }
 })
 // 定义自己的 `useStore` 组合式函数
